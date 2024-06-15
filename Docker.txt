@@ -1,0 +1,199 @@
+
+What is Docker?
+Ans: Docker is a  containerization platform for developing, packaging, shipping and running applications.
+-> It provide the ability to run an application is an isolated environment called a container.
+-> Makes deployment and development.
+
+What is a Container?
+Ans: A way of package an application with all the necessary dependencies and configuration.
+-> It can be easily shared.
+
+What is Docker Images ?
+Ans:Docker image is the source of Docker container. In other words, Docker images are used to create
+containers.
+
+Difference between Docker and VMs?
+Ans: Docker container:
+-> Low impact on OS, very fast, low disk space usage.
+-> Sharing, re-building and distribution is easy.
+-> Encapsulate apps instead of whole machine.
+VMs:
+-> High impact on OS, slower, high disk space usage.
+-> Sharing, re-building and distribution is challenging.
+-> Encapsulate whole machine.
+
+What is the use of a Dockerfile?
+Ans: In Docker, Docker File is used for creating Docker Images using the build command
+
+
+Main Component of docker:
+1. Dockerfile: It is a simple text file with instaructions to build an image & applications.
+2. Dockerimage: Single file with all the dependencies and liberaries to run the program.
+3. Docker container
+4. Docker registry: A docker registry is a central repository for storing and distributing docker images.
+
+Commands:
+1. docker ps
+   # List all running containers.
+
+2. docker ps -a
+   # List all containers, including stopped ones.
+
+3. docker run <image>
+   # Run a new container from a specified image.
+
+4. docker start <container_id>
+   # Start a stopped container.
+
+5. docker stop <container_id>
+   # Stop a running container.
+
+6. docker restart <container_id>
+   # Restart a container.
+
+7. docker pause <container_id>
+   # Pause a running container.
+
+8. docker unpause <container_id>
+   # Unpause a paused container.
+
+9. docker rm <container_id>
+   # Remove a stopped container.
+
+10. docker rm -f <container_id>
+    # Forcefully remove a running container.
+
+11. docker exec -it <container_id> <command>
+    # Execute a command inside a running container interactively.
+
+12. docker logs <container_id>
+    # Fetch logs of a specific container.
+
+13. docker inspect <container_id>
+    # Display detailed information about a container.
+
+14. docker stats
+    # Display real-time usage statistics of containers.
+
+15. docker images
+    # List all locally available images.
+
+16. docker pull <image>
+    # Pull an image from a registry.
+
+17. docker rmi <image_id>
+    # Remove a specific image.
+
+18. docker build -t <tag_name> <path>
+    # Build a Docker image from a Dockerfile in the specified path.
+
+19. docker tag <image_id> <new_tag>
+    # Tag an image to give it a new name and optionally a new tag.
+
+20. docker build <path>
+    # Build an image from the Dockerfile in the current directory.
+
+21. docker build -f <Dockerfile_path> -t <tag_name> <context>
+    # Build an image using a specified Dockerfile, tag, and build context.
+
+22. docker build --pull
+    # Always attempt to pull a newer version of the base image.
+
+23. docker build --no-cache
+    # Build without using cache.
+
+24. docker build --network <network_mode>
+    # Set the networking mode for the build.
+
+25. docker login
+    # Log in to a Docker registry.
+
+26. docker logout
+    # Log out from a Docker registry.
+
+27. docker push <image_name>
+    # Push an image to a registry.
+
+28. docker pull <image_name>
+    # Pull an image from a registry.
+
+29. docker search <term>
+    # Search for an image on Docker Hub.
+
+30. docker network ls
+    # List Docker networks.
+
+31. docker network create <network_name>
+    # Create a new Docker network.
+
+32. docker network connect <network_name> <container_id>
+    # Connect a container to a network.
+
+33. docker network disconnect <network_name> <container_id>
+    # Disconnect a container from a network.
+
+34. docker volume ls
+    # List Docker volumes.
+
+35. docker volume create <volume_name>
+    # Create a new Docker volume.
+
+36. docker volume inspect <volume_name>
+    # Display detailed information about a volume.
+
+37. docker volume rm <volume_name>
+    # Remove a Docker volume.
+
+38. docker-compose up
+    # Create and start containers defined in a docker-compose.yml.
+
+39. docker-compose down
+    # Stop and remove containers created by docker-compose up.
+
+40. docker-compose logs
+    # View output from containers started by docker-compose up.
+
+41. docker-compose build
+    # Build or rebuild services defined in the docker-compose.yml file.
+
+42. docker run --cpu-shares <value>
+    # Specify the CPU shares for a container.
+
+43. docker run --memory <value>
+    # Set a memory limit for a container.
+
+44. docker update --cpus <value> <container_id>
+    # Update CPU quota for a running container.
+
+45. docker update --memory <value> <container_id>
+    # Update memory limit for a running container.
+
+46. docker swarm init
+    # Initialize a Docker swarm.
+
+47. docker swarm join
+    # Join a Docker swarm as a worker or manager.
+
+48. docker node ls
+    # List nodes in the swarm.
+
+49. docker service ls
+    # List services in the swarm.
+
+50. docker system df
+    # Show Docker disk usage.
+
+# Dockerfile: 
+
+example->
+
+FROM node
+
+WROKDIR /app
+
+COPY . .
+
+RUN npm install
+
+CMD ["node", "app.js"]
+
